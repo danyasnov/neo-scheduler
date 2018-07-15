@@ -1,0 +1,11 @@
+.Login .form-cnt {
+    margin: 20px 0;
+}
+.Login .form-cnt > *:first-child{
+
+    margin-right:15px;
+}
+
+.Login {
+    margin-top: 50px;
+}
