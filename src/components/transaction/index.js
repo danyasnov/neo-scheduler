@@ -88,8 +88,8 @@ class Transaction extends Component {
 
 
         setTimeout(async () => {
-            alert(moment().format('H:m:s SSS '));
-            console.log(await sendTransaction(opt));
+            // alert(moment().format('H:m:s SSS '));
+            await sendTransaction(opt)
 
         }, datetime.unix() * 1000 - Date.now())
 

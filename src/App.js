@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-datetime/css/react-datetime.css'
 import {BrowserRouter, Route} from 'react-router-dom'
 
-
+const baseUrl = process.env.PUBLIC_URL;
 class App extends Component {
     constructor() {
         super();
@@ -25,8 +25,10 @@ class App extends Component {
 
 
     render() {
+        // console.log(baseUrl)
+
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <div>
                     <Route exact path='/'
                            render={(props) => <Login {...props} onLogin={this.onLogin} notify={this.notify}/>}/>

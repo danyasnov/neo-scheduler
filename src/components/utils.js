@@ -1,4 +1,4 @@
-import {api, wallet, settings} from "@cityofzion/neon-js";
+import Neon, {api, wallet, settings} from "@cityofzion/neon-js";
 
 const net = process.env.NODE_ENV === 'development' ? 'PrivateNet' : 'MainNet';
 
@@ -29,6 +29,8 @@ export const wifLogin = (wif) => {
 };
 
 export const getBalance = async (address) => {
+    // console.log(await api.getBlockCount(net, address));
+
     const assetBalances = await api.getBalanceFrom({net, address}, api.neoscan);
     const {assets} = assetBalances.balance;
 
@@ -59,6 +61,6 @@ export async function sendTransaction(opt) {
         gas: 0
     };
 
-    console.log(await api.doInvoke(config))
+    alert((await api.doInvoke(config)).response.txid)
 
 }
